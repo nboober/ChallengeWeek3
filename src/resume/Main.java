@@ -1,12 +1,17 @@
 package resume;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class Main {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         ArrayList<Object> resumes = new ArrayList<Object>();
+        ArrayList<Object> contactInfo = new ArrayList<Object>();
+        ArrayList<Object> edu = new ArrayList<Object>();
+        ArrayList<Object> exp = new ArrayList<Object>();
+        ArrayList<Object> skill = new ArrayList<Object>();
 
 
         String eduCont = "";
@@ -16,48 +21,45 @@ public class Main {
 
         do {
 
-//            System.out.println("Please Enter the information for your resume below: \n");
-//            System.out.println("Please enter the name for which you would like to reference this resume once it is saved: ");
-//            String save = scanner.next();
             System.out.println("Please enter your name: ");
-            String name = scanner.nextLine();
             scanner.nextLine();
+            String name = scanner.nextLine();
             System.out.println("Please enter you email address: ");
             String email = scanner.nextLine();
             System.out.println("Please enter your Phone Number: ");
             String phoneNumber = scanner.nextLine();
 
 //            do {
-                System.out.println("Please enter the School you attended: ");
-                String school = scanner.nextLine();
-                System.out.println("Please enter the year you graduated: ");
-                String year = scanner.nextLine();
-                System.out.println("Please enter the degree you received: ");
-                String degree = scanner.nextLine();
-                System.out.println("Please enter the major you graduated with: ");
-                String major = scanner.nextLine();
+            System.out.println("Please enter the School you attended: ");
+            String school = scanner.nextLine();
+            System.out.println("Please enter the year you graduated: ");
+            String year = scanner.nextLine();
+            System.out.println("Please enter the degree you received: ");
+            String degree = scanner.nextLine();
+            System.out.println("Please enter the major you graduated with: ");
+            String major = scanner.nextLine();
 
-//                Education education = new Education();
-//                education.setSchools(degree, major, school, year);
+//            edu.add(new Education(school, year, degree, major));
+//
 //
 //                System.out.println("Would you like to enter another education background?");
 //                eduCont = scanner.nextLine();
 //            }while(!eduCont.equalsIgnoreCase("no"));
 
 //            do {
-                System.out.println("Please enter the company you previously worked for: ");
-                String company = scanner.nextLine();
-                System.out.println("Please enter the title of the last position you had at your previous job: ");
-                String title = scanner.nextLine();
-                System.out.println("Please enter the start date of your previous job: ");
-                String startDate = scanner.nextLine();
-                System.out.println("Please enter the end date of your previous job: ");
-                String endDate = scanner.nextLine();
-                System.out.println("Please enter the job description for your previous job: ");
-                String jobDescription = scanner.nextLine();
+            System.out.println("Please enter the company you previously worked for: ");
+            String company = scanner.nextLine();
+            System.out.println("Please enter the title of the last position you had at your previous job: ");
+            String title = scanner.nextLine();
+            System.out.println("Please enter the start year of your previous job: ");
+            String startDate = scanner.nextLine();
+            System.out.println("Please enter the end year of your previous job: ");
+            String endDate = scanner.nextLine();
+            System.out.println("Please enter the job description for your previous job: ");
+            String jobDescription = scanner.nextLine();
 
-//                Experience exp = new Experience();
-//                exp.setExperience(title, company, startDate, endDate, jobDescription);
+//            exp.add(new Experience(company, title, startDate, endDate, jobDescription));
+
 
 //                System.out.println("Would you like to enter another previous job?");
 //                workCont = scanner.nextLine();
@@ -65,38 +67,73 @@ public class Main {
 //
 //
 //            do {
-                System.out.println("Please enter an important skill you may have: ");
-                String skillDescription = scanner.nextLine();
-                System.out.println("Please enter the proficiency you believe you are with the previous skill you entered: ");
-                String proficiency = scanner.nextLine();
+            System.out.println("Please enter an important skill you may have: ");
+            String skillDescription = scanner.nextLine();
+            System.out.println("Please enter the proficiency you believe you are with the previous skill you entered: ");
+            String proficiency = scanner.nextLine();
 
-//                Skills skills = new Skills();
-//                skills.setSkills(skillDescription, proficiency);
-//
+//            skill.add(new Skills(skillDescription, proficiency));
+
 //                System.out.println("Would you like to enter another skill?");
 //                skillCont = scanner.nextLine();
 //            }while(!skillCont.equalsIgnoreCase("no"));
 
 
-            resumes.add(new Resume(name, email, phoneNumber, school, year, degree, major, company, title, startDate, endDate, jobDescription, skillDescription, proficiency));
+            resumes.add(new Resume(name, email, phoneNumber,school,year,degree,major, company, title, startDate, endDate, jobDescription, skillDescription, proficiency));
 
-            System.out.println("****My resume****");
-
-            list(resumes);
+            System.out.println(resume(resumes));
 
             System.out.println("Would you like to enter another resume? (Yes|No)");
-            cont = scanner.next();
-            System.out.println();
+            String res = scanner.next();
+
+//            if(res.equalsIgnoreCase("no")){
+//                System.out.println("Would you like to change the name, email-address, or phone number for any of your resumes? If yes, type the name of the corresponding resume and what you would like to change. If no, type 'no'.");
+//
+//                System.out.println("Enter the name of the resume owner or 'no'.");
+//                String resumeName = scanner.nextLine();
+//                if(resumeName.equalsIgnoreCase("no")){
+//                    cont = "no";
+//                    break;
+//                }
+//                System.out.println("Enter what you would like to change. (Name, Email, Phone Number");
+//                String change = scanner.next();
+//
+//                System.out.println("Enter what you would like to change that item to.");
+//                String changeTo = scanner.next();
+//
+//                System.out.println(getResume(resumes, resumeName));
+//
+//
+//
+//
+//            }
 
         }while(!cont.equalsIgnoreCase("no"));
 
     }
 
-    public static void list(ArrayList<Object> resumes){
+    public static String resume(ArrayList<Object> resumes){
+
+        String str = "";
 
         for(int r = 0; r < resumes.size(); r++){
-            System.out.println(resumes.get(r).toString());
+            str += resumes.get(r).toString();
         }
+        return str;
     }
+
+//    public static String getResume(ArrayList<Object> resumes, String resumeName) {
+//
+//        String str = "";
+//
+//        for (int r = 0; r < resumes.size(); r++) {
+//            if (resumes.get(r).toString().contains(resumeName)) {
+//                str += resumes.get(r);
+//            } else {
+//                str = "There is no owner of a resume with tha name.";
+//            }
+//        }
+//        return str;
+//    }
 
 }

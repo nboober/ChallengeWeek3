@@ -5,25 +5,16 @@ public class Skills {
 
     private String description = "";
     private String proficiency = "";
-//    ArrayList<String> skills;
-
 
     public Skills(){
-//         skills = new ArrayList<String>();
-//         setSkills(description, proficiency);
 
     }
 
     public Skills(String description, String proficiency){
         this.description = description;
         this.proficiency = proficiency;
-//        skills = new ArrayList<String>();
-//        setSkills(description, proficiency);
-    }
 
-//    public void setSkills(String description, String proficiency){
-//        skills.add(description + ", " + proficiency);
-//    }
+    }
 
     public String getDescription() {
         return description;
@@ -53,7 +44,7 @@ public class Skills {
 //        }
 //
 //        return str;
-        return "\n" + description + ", " + proficiency + "\n";
+        return "\n" + getDescription() + ", " + getProficiency() + "\n";
 
     }
 

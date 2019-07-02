@@ -9,12 +9,9 @@ public class Experience {
     private String startDate = "";
     private String endDate = "";
     private String description = "";
-//    ArrayList<String> experience;
 
 
     public Experience(){
-//         experience = new ArrayList<String>();
-//         setExperience(title, company, startDate, endDate, description);
 
     }
 
@@ -24,13 +21,8 @@ public class Experience {
         this.startDate = startDate;
         this.endDate = endDate;
         this.description = description;
-//        experience = new ArrayList<String>();
-//        setExperience(title, company, startDate, endDate, description);
-    }
 
-//    public void setExperience(String title, String company, String startDate, String endDate, String description){
-//        experience.add(title + "\n" + company + ", " + startDate + " - " + endDate + "\n" + description);
-//    }
+    }
 
     public String getCompany() {
         return company;
@@ -85,7 +77,7 @@ public class Experience {
 //        }
 //
 //        return str;
-        return "\n" + this.title + "\n" + this.company + ", " + this.startDate + " - " + this.endDate + "\n" + this.description + "\n";
+        return "\n" + getTitle() + "\n" + getCompany() + ", " + getStartDate() + " - " + getEndDate() + "\n" + getDescription() + "\n";
 
     }
 
