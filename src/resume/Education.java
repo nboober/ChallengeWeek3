@@ -7,11 +7,11 @@ public class Education {
     private String year = "";
     private String degree = "";
     private String major = "";
-    ArrayList<String> schools;
+//    ArrayList<String> schools;
 
     public Education(){
-        schools  = new ArrayList<String>();
-        setSchools(school, year, degree, major);
+//        schools  = new ArrayList<String>();
+//        setSchools(school, year, degree, major);
 
     }
 
@@ -20,13 +20,13 @@ public class Education {
         this.year = year;
         this.degree = degree;
         this.major = major;
-        schools  = new ArrayList<String>();
-        setSchools(school, year, degree, major);
+//        schools  = new ArrayList<String>();
+//        setSchools(school, year, degree, major);
     }
 
-    public void setSchools(String degree, String major, String school, String year){
-        schools.add(degree + " in " + major + "\n" + school + ", " + year);
-    }
+//    public void setSchools(String degree, String major, String school, String year){
+//        schools.add(degree + " in " + major + "\n" + school + ", " + year);
+//    }
 
     public void setSchool(String school){
         this.school = school;
@@ -62,16 +62,18 @@ public class Education {
 
     @Override
     public String toString() {
+//
+//        String str = "";
+//
+//        for(String school : schools){
+//
+//            str += "\n" + school + "\n";
+//
+//        }
+//
+//            return str;
 
-        String str = "";
-
-        for(String school : schools){
-
-            str += "\n" + school + "\n";
-
-        }
-
-            return str;
+        return "\n"+ this.degree + " in " + this.major + "\n" + this.school + ", " + this.year + "\n";
 
     }
 

@@ -5,25 +5,25 @@ public class Skills {
 
     private String description = "";
     private String proficiency = "";
-    ArrayList<String> skills;
+//    ArrayList<String> skills;
 
 
     public Skills(){
-         skills = new ArrayList<String>();
-         setSkills(description, proficiency);
+//         skills = new ArrayList<String>();
+//         setSkills(description, proficiency);
 
     }
 
     public Skills(String description, String proficiency){
         this.description = description;
         this.proficiency = proficiency;
-        skills = new ArrayList<String>();
-        setSkills(description, proficiency);
+//        skills = new ArrayList<String>();
+//        setSkills(description, proficiency);
     }
 
-    public void setSkills(String description, String proficiency){
-        skills.add(description + ", " + proficiency);
-    }
+//    public void setSkills(String description, String proficiency){
+//        skills.add(description + ", " + proficiency);
+//    }
 
     public String getDescription() {
         return description;
@@ -44,15 +44,16 @@ public class Skills {
     @Override
     public String toString(){
 
-        String str = "";
-
-        for(String skill : skills){
-
-            str += "\n" + skill + "\n";
-
-        }
-
-        return str;
+//        String str = "";
+//
+//        for(String skill : skills){
+//
+//            str += "\n" + skill + "\n";
+//
+//        }
+//
+//        return str;
+        return "\n" + description + ", " + proficiency + "\n";
 
     }
 

@@ -8,6 +8,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Object> resumes = new ArrayList<Object>();
 
+
         String eduCont = "";
         String workCont = "";
         String skillCont = "";
@@ -15,17 +16,18 @@ public class Main {
 
         do {
 
-            System.out.println("Please Enter the information for your resume below: \n");
+//            System.out.println("Please Enter the information for your resume below: \n");
 //            System.out.println("Please enter the name for which you would like to reference this resume once it is saved: ");
 //            String save = scanner.next();
             System.out.println("Please enter your name: ");
             String name = scanner.nextLine();
+            scanner.nextLine();
             System.out.println("Please enter you email address: ");
             String email = scanner.nextLine();
             System.out.println("Please enter your Phone Number: ");
             String phoneNumber = scanner.nextLine();
 
-            do {
+//            do {
                 System.out.println("Please enter the School you attended: ");
                 String school = scanner.nextLine();
                 System.out.println("Please enter the year you graduated: ");
@@ -35,14 +37,14 @@ public class Main {
                 System.out.println("Please enter the major you graduated with: ");
                 String major = scanner.nextLine();
 
-                Education education = new Education();
-                education.setSchools(degree, major, school, year);
+//                Education education = new Education();
+//                education.setSchools(degree, major, school, year);
+//
+//                System.out.println("Would you like to enter another education background?");
+//                eduCont = scanner.nextLine();
+//            }while(!eduCont.equalsIgnoreCase("no"));
 
-                System.out.println("Would you like to enter another education background?");
-                eduCont = scanner.nextLine();
-            }while(!eduCont.equalsIgnoreCase("no"));
-
-            do {
+//            do {
                 System.out.println("Please enter the company you previously worked for: ");
                 String company = scanner.nextLine();
                 System.out.println("Please enter the title of the last position you had at your previous job: ");
@@ -54,37 +56,47 @@ public class Main {
                 System.out.println("Please enter the job description for your previous job: ");
                 String jobDescription = scanner.nextLine();
 
-                Experience exp = new Experience();
-                exp.setExperience(title, company, startDate, endDate, jobDescription);
+//                Experience exp = new Experience();
+//                exp.setExperience(title, company, startDate, endDate, jobDescription);
 
-                System.out.println("Would you like to enter another previous job?");
-                workCont = scanner.nextLine();
-            }while(!workCont.equalsIgnoreCase("no"));
-
-
-            do {
+//                System.out.println("Would you like to enter another previous job?");
+//                workCont = scanner.nextLine();
+//            }while(!workCont.equalsIgnoreCase("no"));
+//
+//
+//            do {
                 System.out.println("Please enter an important skill you may have: ");
                 String skillDescription = scanner.nextLine();
                 System.out.println("Please enter the proficiency you believe you are with the previous skill you entered: ");
                 String proficiency = scanner.nextLine();
 
-                Skills skills = new Skills();
-                skills.setSkills(skillDescription, proficiency);
+//                Skills skills = new Skills();
+//                skills.setSkills(skillDescription, proficiency);
+//
+//                System.out.println("Would you like to enter another skill?");
+//                skillCont = scanner.nextLine();
+//            }while(!skillCont.equalsIgnoreCase("no"));
 
-                System.out.println("Would you like to enter another skill?");
-                skillCont = scanner.nextLine();
-            }while(!skillCont.equalsIgnoreCase("no"));
 
-
-            Resume resume = new Resume(name, email, phoneNumber);
+            resumes.add(new Resume(name, email, phoneNumber, school, year, degree, major, company, title, startDate, endDate, jobDescription, skillDescription, proficiency));
 
             System.out.println("****My resume****");
-            System.out.println(resume.toString());
 
-            System.out.println("Would you like to enter another resume? (Yes|No");
+            list(resumes);
+
+            System.out.println("Would you like to enter another resume? (Yes|No)");
             cont = scanner.next();
+            System.out.println();
 
         }while(!cont.equalsIgnoreCase("no"));
 
     }
+
+    public static void list(ArrayList<Object> resumes){
+
+        for(int r = 0; r < resumes.size(); r++){
+            System.out.println(resumes.get(r).toString());
+        }
+    }
+
 }
