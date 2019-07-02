@@ -1,5 +1,4 @@
 package resume;
-import java.util.ArrayList;
 
 public class Resume {
     private Contact contact;
@@ -11,12 +10,5 @@ public class Resume {
     public Resume(){
 
     }
-
-
-//    @Override
-//    public String toString(){
-//        return "********Resume********" + "\n" + contact.toString() + "\n" + "Education " + education.toString() + "\n" + "Experience" + experience.toString() + "\n" + "Skills" + skills.toString();
-//    }
-
 
 }

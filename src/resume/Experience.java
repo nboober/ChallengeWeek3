@@ -1,6 +1,4 @@
 package resume;
-import java.util.ArrayList;
-
 
 public class Experience {
 
@@ -67,16 +65,6 @@ public class Experience {
     @Override
     public String toString(){
 
-//
-//        String str = "";
-//
-//        for(String exp : experience){
-//
-//            str += "\n" + exp + "\n";
-//
-//        }
-//
-//        return str;
         return "\n" + getTitle() + "\n" + getCompany() + ", " + getStartDate() + " - " + getEndDate() + "\n" + getDescription() + "\n";
 
     }

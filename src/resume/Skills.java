@@ -1,5 +1,4 @@
 package resume;
-import java.util.ArrayList;
 
 public class Skills {
 
@@ -35,15 +34,6 @@ public class Skills {
     @Override
     public String toString(){
 
-//        String str = "";
-//
-//        for(String skill : skills){
-//
-//            str += "\n" + skill + "\n";
-//
-//        }
-//
-//        return str;
         return "\n" + getDescription() + ", " + getProficiency();
 
     }

@@ -1,5 +1,4 @@
 package resume;
-import java.util.ArrayList;
 
 public class Education {
 
@@ -54,16 +53,6 @@ public class Education {
 
     @Override
     public String toString() {
-
-//        String str = "";
-//
-//        for(Object school : schools){
-//
-//            str += "\n" + school + "\n";
-//
-//        }
-//
-//            return str;
 
         return "\n"+ getDegree() + " in " + getMajor() + "\n" + getSchool() + ", " + getYear() + "\n";
 
