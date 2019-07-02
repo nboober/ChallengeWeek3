@@ -82,11 +82,15 @@ public class Main {
             }while(!skillCont.equalsIgnoreCase("no"));
 
 
-            resumes.add(counter, "\n********Resume********\n" + contactInfo(contactInfo) + "\nEducation" + education(edu) + "\nExperience" + experience(exp) + "\nSkills" + skills(skill));
+            resumes.add(counter, "\n********Resume********\n" + contactInfo(contactInfo) + "\nEducation" + education(edu) + "\nExperience" + experience(exp) + "\nSkills" + skills(skill) + "\n");
             System.out.println(resume(resumes));
 
-            System.out.println("\nWould you like to enter another resume? (Yes|No)");
+            System.out.println("Would you like to enter another resume? (Yes|No)");
             cont = scanner.next();
+            contactInfo.clear();
+            edu.clear();
+            exp.clear();
+            skill.clear();
             counter++;
 
 //            if(res.equalsIgnoreCase("no")){
