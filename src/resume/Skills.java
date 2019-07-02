@@ -44,7 +44,7 @@ public class Skills {
 //        }
 //
 //        return str;
-        return "\n" + getDescription() + ", " + getProficiency() + "\n";
+        return "\n" + getDescription() + ", " + getProficiency();
 
     }
 
